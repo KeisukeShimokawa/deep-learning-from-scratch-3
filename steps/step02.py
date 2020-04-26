@@ -2,9 +2,10 @@ import numpy as np
 
 
 class Variable:
-    '''
+    """
     numpyの多次元配列を格納するためのクラス
-    '''
+    """
+
     def __init__(self, data):
         self.data = data
 

@@ -11,11 +11,11 @@ class Variable:
         self.creator = func
 
     def backward(self):
-        f = self.creator                    # 1. 関数の取得
+        f = self.creator  # 1. 関数の取得
         if f is not None:
-            x = f.input                     # 2. 関数の入力の取得
+            x = f.input  # 2. 関数の入力の取得
             x.grad = f.backward(self.grad)  # 3. 関数のbackwardメソッドを呼ぶ
-            x.backward()                    # 4. 入力の変数のbackwardを再帰的に呼び出す
+            x.backward()  # 4. 入力の変数のbackwardを再帰的に呼び出す
 
 
 class Function:
@@ -23,9 +23,9 @@ class Function:
         x = input.data
         y = self.forward(x)
         output = Variable(y)
-        output.set_creator(self)    # 出力変数に生みの親となる関数を覚えさせる
+        output.set_creator(self)  # 出力変数に生みの親となる関数を覚えさせる
         self.input = input
-        self.output = output    # 関数自体に入力と出力のつながりを作る
+        self.output = output  # 関数自体に入力と出力のつながりを作る
         return output
 
 

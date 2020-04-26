@@ -5,7 +5,7 @@ class Variable:
     def __init__(self, data):
         if data is not None:
             if not isinstance(data, np.ndarray):
-                raise TypeError('{} is not supported'.format(type(data)))
+                raise TypeError("{} is not supported".format(type(data)))
 
         self.data = data
         self.grad = None
@@ -71,4 +71,3 @@ x0 = Variable(np.array(2))
 x1 = Variable(np.array(3))
 y = add(x0, x1)
 print(y.data)
-
