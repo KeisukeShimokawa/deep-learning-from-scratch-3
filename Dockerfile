@@ -15,6 +15,6 @@ RUN apt-get install -y vim git
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
-RUN pip install numpy matplotlib pylint
+RUN pip install numpy matplotlib pylint black
 
 WORKDIR /home/app

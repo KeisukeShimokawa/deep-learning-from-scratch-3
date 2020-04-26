@@ -1,0 +1,19 @@
+// https://code.visualstudio.com/docs/remote/containers#_devcontainerjson-reference
+{
+    "name": "deep learning from scratch #3",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "python3",
+    "workspaceFolder": "/home/app",
+    "extensions": [
+        "ms-python.python"
+    ],
+    "settings": {
+        "editor.tabSize": 2,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+    "shutdownAction": "none"
+}
