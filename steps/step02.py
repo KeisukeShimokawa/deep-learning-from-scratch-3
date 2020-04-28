@@ -10,19 +10,6 @@ class Variable:
         self.data = data
 
 
-# class Function:
-#     '''
-#     Variableクラスを入力に受け取り、
-#     入力と出力の対応関係を計算し、
-#     計算結果をVariableクラスとして出力する
-#     '''
-#     def __call__(self, input):
-#         x = input.data
-#         y = x ** 2
-#         output = Variable(y)
-#         return output
-
-
 class Function:
     def __call__(self, input):
         x = input.data
