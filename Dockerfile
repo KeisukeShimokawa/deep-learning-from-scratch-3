@@ -2,7 +2,7 @@ FROM python:3
 USER root
 
 RUN apt-get update \
-    && apt-get -y install locales vim git \
+    && apt-get -y install locales vim git graphviz \
     && localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
 
 ENV LANG ja_JP.UTF-8
