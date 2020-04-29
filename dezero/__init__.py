@@ -1,6 +1,6 @@
 # =============================================================================
 # step23.pyからstep32.pyまではsimple_coreを利用
-is_simple_core = True  # True
+is_simple_core = False  # True
 # =============================================================================
 
 if is_simple_core:
@@ -23,21 +23,6 @@ else:
     from dezero.core import as_variable
     from dezero.core import setup_variable
     from dezero.core import Config
-    from dezero.layers import Layer
-    from dezero.models import Model
-    from dezero.datasets import Dataset
-    from dezero.dataloaders import DataLoader
-    from dezero.dataloaders import SeqDataLoader
-
-    import dezero.datasets
-    import dezero.dataloaders
-    import dezero.optimizers
-    import dezero.functions
-    import dezero.functions_conv
-    import dezero.layers
-    import dezero.utils
-    import dezero.cuda
-    import dezero.transforms
 
 setup_variable()
 __version__ = "0.0.13"
