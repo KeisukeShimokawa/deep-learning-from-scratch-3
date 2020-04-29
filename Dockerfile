@@ -1,5 +1,6 @@
 FROM python:3
 USER root
+WORKDIR /home/app
 
 RUN apt-get update \
     && apt-get -y install locales vim git graphviz \
@@ -14,5 +15,3 @@ ENV TERM xterm
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install numpy matplotlib pylint black
-
-WORKDIR /home/app
