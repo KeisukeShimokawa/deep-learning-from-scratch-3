@@ -6,12 +6,12 @@ import subprocess
 def _dot_var(v, verbose=False):
     dot_var = '{} [label="{}", color=orange, style=filled]\n'
 
-    name = '' if v.name is None else v.name
+    name = "" if v.name is None else v.name
     # verboseが設定されている場合には、ndarrayの形状とデータ型も名称に設定
     if verbose and v.data is not None:
         if v.name is not None:
-            name += ': '
-        name += str(v.shape) + ' ' + str(v.dtype)
+            name += ": "
+        name += str(v.shape) + " " + str(v.dtype)
 
     return dot_var.format(id(v), name)
 
@@ -24,7 +24,7 @@ def _dot_func(f):
 
     # for edge
     # 関数の入力と出力とをつなげる
-    dot_edge = '{} -> {}\n'
+    dot_edge = "{} -> {}\n"
     for x in f.inputs:
         ret += dot_edge.format(id(x), id(f))
     for y in f.outputs:  # y is weakref
@@ -33,7 +33,7 @@ def _dot_func(f):
 
 
 def get_dot_graph(output, verbose=False):
-    txt = ''
+    txt = ""
     funcs = []
     seen_set = set()
 
@@ -55,28 +55,28 @@ def get_dot_graph(output, verbose=False):
             if x.creator is not None:
                 add_func(x.creator)
 
-    return 'digraph g{\n' + txt + '}'
+    return "digraph g{\n" + txt + "}"
 
 
-def plot_dot_graph(output, verbose=True, to_file='graph.png'):
+def plot_dot_graph(output, verbose=True, to_file="graph.png"):
     dot_graph = get_dot_graph(output, verbose)
 
-    tmp_dir = os.path.join(os.path.expanduser('~'), '.dezero')
+    tmp_dir = os.path.join(os.path.expanduser("~"), ".dezero")
     if not os.path.exists(tmp_dir):
         os.mkdir(tmp_dir)
-    graph_path = os.path.join(tmp_dir, 'tmp_graph.dot')
+    graph_path = os.path.join(tmp_dir, "tmp_graph.dot")
 
-    with open(graph_path, 'w') as f:
+    with open(graph_path, "w") as f:
         f.write(dot_graph)
 
     extension = os.path.splitext(to_file)[1][1:]  # Extension(e.g. png, pdf)
-    cmd = 'dot {} -T {} -o {}'.format(graph_path, extension, to_file)
+    cmd = "dot {} -T {} -o {}".format(graph_path, extension, to_file)
     subprocess.run(cmd, shell=True)
 
     # Return the image as a Jupyter Image object, to be displayed in-line.
     try:
         from IPython import display
+
         return display.Image(filename=to_file)
     except:
         pass
-
