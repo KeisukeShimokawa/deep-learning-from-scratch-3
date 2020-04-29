@@ -1,13 +1,13 @@
 # リモート開発用の設定を追加しておく。
 
-# version: "3"
-# services:
-#     web:
-#         environment:
-#             - HOME=/home/~
-#         volumes:
-#             - ~/.gitconfig:/home/~/.gitconfig
-#             - ~/.ssh:/home/~/.ssh
+version: "3"
+services:
+    python3:
+      environment:
+        - HOME=/home/~
+      volumes:
+        - ~/.gitconfig:/home/~/.gitconfig
+        - ~/.ssh:/home/~/.ssh
 
 # 環境変数HOMEを明示的に指定することで、アクセス権の設定をしておく
 # volumesではコンテナ内の環境でホストと同じ設定でgitを使えるようにする

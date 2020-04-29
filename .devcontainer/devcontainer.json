@@ -2,7 +2,8 @@
 {
     "name": "deep learning from scratch #3",
     "dockerComposeFile": [
-        "../docker-compose.yml"
+        "../docker-compose.yml",
+        "docker-compose.extend.yml"
     ],
     "service": "python3",
     "workspaceFolder": "/home/app",
