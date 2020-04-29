@@ -9,13 +9,18 @@
     "workspaceFolder": "/home/app",
     "extensions": [
         "ms-python.python",
-        "tabnine.tabnine-vscode"
+        "tabnine.tabnine-vscode",
+        "kevinrose.vsc-python-indent"
     ],
     "settings": {
-        "editor.tabSize": 2,
+        "editor.tabSize": 4,
         "files.insertFinalNewline": true,
         "files.trimFinalNewlines": true,
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/usr/local/bin/pylint"
       },
     "shutdownAction": "none"
 }
