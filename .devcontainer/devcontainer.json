@@ -8,7 +8,8 @@
     "service": "python3",
     "workspaceFolder": "/home/app",
     "extensions": [
-        "ms-python.python"
+        "ms-python.python",
+        "tabnine.tabnine-vscode"
     ],
     "settings": {
         "editor.tabSize": 2,
